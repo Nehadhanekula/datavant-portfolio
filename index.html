@@ -1,0 +1,264 @@
+<title>Neha Dhanekula · Portfolio for Datavant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --bg:#F6F5FB; --surface:#FFFFFF; --surface-2:#F0EEF9;
+    --ink:#1B1640; --muted:#5B5676; --faint:#938EB0; --line:#E4E1F0;
+    --accent:#6D4AFF; --accent-ink:#4B2FC4; --accent-soft:#EAE4FF;
+    --signal:#4B2FC4; --signal-soft:#EAE4FF;
+    --grad:linear-gradient(135deg,#2A1E66 0%,#6D4AFF 60%,#9A6BFF 100%);
+    --shadow:0 1px 2px rgba(27,22,64,.04), 0 10px 30px rgba(27,22,64,.08);
+    --shadow-lift:0 2px 8px rgba(27,22,64,.08), 0 22px 48px rgba(27,22,64,.14);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important; scroll-behavior:auto;}}
+  .wrap{max-width:860px; margin:0 auto; padding:0 22px 90px;}
+  a{color:var(--accent-ink);}
+
+  header{padding:56px 0 30px; position:relative;}
+  header::after{content:""; display:block; height:4px; width:72px; margin-top:30px;
+    background:var(--grad); border-radius:4px;}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent-ink); margin:0 0 18px;}
+  h1{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:clamp(34px,6.5vw,56px);
+    line-height:1.02; letter-spacing:-.02em; margin:0 0 8px; text-wrap:balance;}
+  .role{font-size:clamp(17px,2.4vw,20px); color:var(--ink); font-weight:600; margin:0 0 16px;}
+  .lede{font-size:17px; max-width:64ch; margin:0 0 24px; color:var(--muted);}
+  .lede b{color:var(--accent-ink); font-weight:600;}
+  .contact{display:flex; flex-wrap:wrap; gap:9px;}
+  .contact a, .contact span{font-family:"IBM Plex Mono",monospace; font-size:12.5px;
+    text-decoration:none; color:var(--muted); background:var(--surface); border:1px solid var(--line);
+    padding:7px 12px; border-radius:8px; transition:border-color .15s, color .15s;}
+  .contact a:hover{color:var(--accent-ink); border-color:var(--accent);}
+
+  .impact{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:34px;
+    background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    box-shadow:var(--shadow);}
+  .impact div{background:var(--surface); padding:20px 16px; text-align:center;}
+  .impact .n{font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:clamp(24px,4.5vw,34px);
+    color:var(--accent-ink); line-height:1; letter-spacing:-.01em;}
+  .impact .l{font-size:12.5px; color:var(--muted); margin-top:7px; line-height:1.35;}
+  @media (max-width:620px){ .impact{grid-template-columns:repeat(2,1fr);} }
+
+  section{margin-top:52px;}
+  .kicker{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--faint); margin:0 0 6px;}
+  h2{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:clamp(24px,4vw,32px);
+    letter-spacing:-.015em; margin:0 0 20px;}
+
+  .fit{display:grid; gap:0; border:1px solid var(--line); border-radius:16px;
+    overflow:hidden; background:var(--surface); box-shadow:var(--shadow);}
+  .fitrow{display:grid; grid-template-columns:minmax(150px,240px) 1fr; gap:0;
+    border-bottom:1px solid var(--line);}
+  .fitrow:last-child{border-bottom:none;}
+  .need{padding:17px 18px; background:var(--surface-2); font-weight:600; font-size:14.5px;
+    color:var(--accent-ink); border-right:1px solid var(--line);}
+  .have{padding:17px 19px; font-size:15.5px; color:var(--ink);}
+  .have b{color:var(--ink); font-weight:600;}
+  @media (max-width:580px){
+    .fitrow{grid-template-columns:1fr;}
+    .need{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  .plan{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:640px){ .plan{grid-template-columns:1fr;} }
+  .phase{background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:20px 20px 22px; box-shadow:var(--shadow); position:relative; overflow:hidden;}
+  .phase::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background:var(--grad);}
+  .phase .days{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.06em;
+    color:var(--accent-ink); margin:6px 0 8px;}
+  .phase h3{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:19px; margin:0 0 9px;}
+  .phase p{margin:0; font-size:14.5px; color:var(--muted);}
+
+  .case{background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:0 14px 14px 0; padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow);}
+  .case h3{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:21px; letter-spacing:-.01em;
+    margin:0 0 2px;}
+  .case .where{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--muted); margin:0 0 14px;}
+  .case p{margin:0 0 11px; font-size:15.5px;}
+  .case p:last-child{margin-bottom:0;}
+  .case .lbl{font-weight:600; color:var(--accent-ink);}
+  .metrics{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .metrics span{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.02em;
+    background:var(--signal-soft); color:var(--signal); padding:6px 11px; border-radius:20px; font-weight:500;}
+
+  .skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;}
+  .skillcard{background:var(--surface); border:1px solid var(--line); border-radius:13px;
+    padding:17px 18px; box-shadow:var(--shadow);}
+  .skillcard h4{margin:0 0 7px; font-size:13px; font-family:"IBM Plex Mono",monospace;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--accent-ink);}
+  .skillcard p{margin:0; font-size:14.5px; color:var(--ink);}
+
+  .edu{background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:22px 24px; box-shadow:var(--shadow);}
+  .edu h3{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:20px; margin:0 0 3px;}
+  .edu .where{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--muted); margin:0 0 13px;}
+  .edu p{margin:0; font-size:15.5px;}
+
+  footer{margin-top:56px; padding:34px 26px; background:var(--grad); color:#EEE9FF;
+    border-radius:16px; text-align:center;}
+  footer .f-big{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:22px; color:#fff;
+    margin:0 0 8px; letter-spacing:-.01em;}
+  footer p{margin:0 0 16px; font-size:15px; max-width:54ch; margin-left:auto; margin-right:auto;}
+  footer .f-contact{display:flex; flex-wrap:wrap; gap:9px; justify-content:center;}
+  footer .f-contact a{font-family:"IBM Plex Mono",monospace; font-size:12.5px; text-decoration:none;
+    color:#fff; border:1px solid rgba(255,255,255,.35); padding:7px 12px; border-radius:8px;}
+  footer .f-contact a:hover{border-color:#fff; background:rgba(255,255,255,.12);}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Prepared for Datavant · Customer Insights Analyst · Payer Retrieval</p>
+    <h1>Neha Dhanekula</h1>
+    <p class="role">Data analyst who turns messy operational and healthcare data into reporting teams run on.</p>
+    <p class="lede">Why I'm a strong fit for this role: I'm already fluent in the <b>core stack it runs on</b>, SQL, dashboards, and KPI reporting, and I've spent my work turning operational and healthcare data into insights leadership actually used to decide. I <b>partner naturally with the business teams</b> who rely on the numbers, which is the heart of turning customer and operational data into insight for Payer Retrieval.</p>
+    <div class="contact">
+      <a href="mailto:nehad080206@gmail.com">nehad080206@gmail.com</a>
+      <span>623-302-6286</span>
+      <span>Remote-ready · Arizona, Mountain time</span>
+    </div>
+
+    <div class="impact">
+      <div><div class="n">~50%</div><div class="l">less manual reporting time, via automation</div></div>
+      <div><div class="n">25K+</div><div class="l">health cohorts turned into dashboards</div></div>
+      <div><div class="n">~15%</div><div class="l">yield lift from early anomaly detection</div></div>
+      <div><div class="n">6</div><div class="l">SQL-driven dashboards for stakeholders</div></div>
+    </div>
+  </header>
+
+  <section id="fit">
+    <p class="kicker">Why I fit this role</p>
+    <h2>What the role needs, and where I've done it</h2>
+    <div class="fit">
+      <div class="fitrow">
+        <div class="need">Turn customer &amp; operational data into insights</div>
+        <div class="have">This is the core of what I do: taking messy operational data and turning it into <b>clear reporting a team acts on</b>, across a research lab, a city program, and two nonprofits.</div>
+      </div>
+      <div class="fitrow">
+        <div class="need">Strong SQL across data sources</div>
+        <div class="have">Wrote the SQL behind <b>six interactive dashboards</b>, and designed ETL pipelines and a SQL schema to combine data from several operational sources. Comfortable ramping on Snowflake.</div>
+      </div>
+      <div class="fitrow">
+        <div class="need">BI dashboards &amp; recurring reports</div>
+        <div class="have">Built dashboards and recurring KPI reporting in <b>Tableau and Power BI</b> that stakeholders opened to make decisions. Sigma is the same category of tool, a quick ramp.</div>
+      </div>
+      <div class="fitrow">
+        <div class="need">KPI monitoring &amp; ad hoc analysis</div>
+        <div class="have">Maintained recurring <b>KPI scorecards</b> for cross-functional teams and delivered client-facing ad hoc analysis on demand for faculty, PIs, and leadership.</div>
+      </div>
+      <div class="fitrow">
+        <div class="need">Partnering with Customer Success &amp; Operations</div>
+        <div class="have">Comfortable sitting between a business team and the data: I turn vague stakeholder questions into <b>clear metric definitions and reports</b> people can act on.</div>
+      </div>
+      <div class="fitrow">
+        <div class="need">Data validation &amp; quality</div>
+        <div class="have">Built standardized pipelines and validation steps that <b>improved data accuracy by ~25%</b>, so stakeholders could trust the numbers behind the reports.</div>
+      </div>
+      <div class="fitrow">
+        <div class="need">Healthcare &amp; operational data</div>
+        <div class="have">Worked with population-health data for <b>25,000+ family cohorts</b>, analyzed health and employment outcomes for a City of Tempe program, and ran a clinical, multi-omics survival model for my capstone.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <p class="kicker">How I'd approach it</p>
+    <h2>My first 90 days</h2>
+    <div class="plan">
+      <div class="phase">
+        <div class="days">Days 0&ndash;30 · Learn</div>
+        <h3>Understand the data and the people</h3>
+        <p>Learn the Payer Retrieval data, the existing Sigma dashboards and KPIs, and how Customer Success and Operations actually use them. Meet stakeholders and map the questions they ask most.</p>
+      </div>
+      <div class="phase">
+        <div class="days">Days 30&ndash;60 · Own</div>
+        <h3>Take the recurring work off their plate</h3>
+        <p>Take ownership of recurring reports, validate data quality so the numbers are trusted, and start answering ad hoc questions independently. Tighten one report where I can add immediate value.</p>
+      </div>
+      <div class="phase">
+        <div class="days">Days 60&ndash;90 · Improve</div>
+        <h3>Surface an opportunity</h3>
+        <p>Ship a dashboard or analysis that surfaces a real opportunity to improve customer experience or operational performance, and propose one automation that makes the reporting more scalable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <p class="kicker">Selected work</p>
+    <h2>Reporting and insight, end to end</h2>
+
+    <div class="case">
+      <h3>Reporting and anomaly detection for a research lab</h3>
+      <p class="where">Data Analyst · ASU Core Research Facilities · 2025-2026</p>
+      <p><span class="lbl">Problem.</span> A production workflow generated raw data across 10+ machines and about 12 batches a month, and the team rebuilt reports and graphs by hand every week.</p>
+      <p><span class="lbl">What I built.</span> A Python pipeline that cleaned the raw data and generated visualizations automatically, recurring reporting moved into Power Query, a regression-based check that flagged deviations early with an auditable trail, and a SQL schema for easier retrieval. I validated accuracy and consistency throughout.</p>
+      <p><span class="lbl">Result.</span> Stakeholders got a consistent scorecard view instead of one-off graphs, problems were caught earlier, and weekly manual reporting largely disappeared.</p>
+      <div class="metrics"><span>~15% yield improvement</span><span>~25% data accuracy</span><span>~6 hrs/week saved</span></div>
+    </div>
+
+    <div class="case">
+      <h3>Dashboards for population-health data at scale</h3>
+      <p class="where">Data Intern · Fundación Paraguaya · 2025</p>
+      <p><span class="lbl">Problem.</span> Survey and health-outcome data for 25,000+ family cohorts needed to inform program decisions, but reporting was messy and inconsistent across sub-organizations.</p>
+      <p><span class="lbl">What I built.</span> Cleaned and validated the data in Python, built interactive dashboards of KPI trends and population-level performance for external leadership, and a standardized reporting template the sub-organizations adopted so everyone reported the same way.</p>
+      <p><span class="lbl">Result.</span> Leadership could allocate resources on data instead of guesswork, and report production got faster and more consistent across teams.</p>
+      <div class="metrics"><span>25,000+ cohorts</span><span>~7 hrs saved per report</span></div>
+    </div>
+
+    <div class="case">
+      <h3>Automated program reporting and KPI redesign</h3>
+      <p class="where">Data Analyst · City of Tempe, College Connect · 2026-present</p>
+      <p><span class="lbl">Problem.</span> Program data was logged and chased manually across 6+ sites, and supervisors had no real-time view of activity.</p>
+      <p><span class="lbl">What I built.</span> Automated flows for logging, surveys, and escalations, a redesigned QR-code event-logging system across sites, and redefined KPIs that track real program progress instead of vanity metrics.</p>
+      <p><span class="lbl">Result.</span> Supervisors gained real-time visibility, and manual reporting time dropped by roughly half. A clean example of turning messy operational data into a measured, reliable process.</p>
+      <div class="metrics"><span>~50% less manual reporting</span><span>6+ sites standardized</span></div>
+    </div>
+
+    <div class="case">
+      <h3>SQL-driven dashboards for client decisions</h3>
+      <p class="where">Data Analysis Intern · DSL EST · 2023</p>
+      <p><span class="lbl">Problem.</span> Client stakeholders needed faster visibility into operational data to make decisions.</p>
+      <p><span class="lbl">What I built.</span> The SQL behind six interactive dashboards, SQL-driven trend analysis on usage data, and an automated data-validation step.</p>
+      <p><span class="lbl">Result.</span> Operational efficiency and client decision speed both improved, and reporting accuracy rose.</p>
+      <div class="metrics"><span>6 dashboards</span><span>~30% faster decisions</span><span>~25% accuracy</span></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="kicker">Tools</p>
+    <h2>The stack this role runs on</h2>
+    <div class="skills">
+      <div class="skillcard"><h4>Data &amp; querying</h4><p>SQL, relational databases, ETL pipelines, data validation &amp; QA, Python (Pandas, NumPy), R</p></div>
+      <div class="skillcard"><h4>BI &amp; dashboards</h4><p>Tableau, Power BI, advanced Excel, Google Sheets, KPI &amp; scorecard design (Sigma: quick ramp)</p></div>
+      <div class="skillcard"><h4>Cloud &amp; data</h4><p>AWS (DynamoDB, Lambda), schema design, cloud data warehouses (Snowflake: familiar)</p></div>
+      <div class="skillcard"><h4>Analytics</h4><p>Trend &amp; cohort analysis, regression &amp; statistical modeling, stakeholder-facing reporting</p></div>
+    </div>
+  </section>
+
+  <section id="edu">
+    <p class="kicker">Education</p>
+    <h2>Foundation</h2>
+    <div class="edu">
+      <h3>B.S. Data Science · Arizona State University</h3>
+      <p class="where">May 2026 · New American University Scholarship · started at ASU at 16</p>
+      <p>Capstone: a deep learning survival model predicting cancer outcomes from clinical, multi-omics data, evaluated with Kaplan-Meier, log-rank, and Cox proportional-hazards methods. Coursework and research span causal inference, quasi-experimental design, and SEM alongside machine learning.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="f-big">Health data that matters, turned into insight a team can act on.</p>
+    <p>That's the work I want to do, and it's exactly what this role is. Happy to walk through any of this live or share the underlying work. Thank you for taking a closer look.</p>
+    <div class="f-contact">
+      <a href="mailto:nehad080206@gmail.com">nehad080206@gmail.com</a>
+    </div>
+  </footer>
+
+</div>
